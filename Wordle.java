@@ -27,16 +27,25 @@ public class Wordle {
         else {
             guessedWords[attempt] = guess;
             attempt++;
-            this.displayGuess(guess);
+            // this.displayGuess(guess);
             for (String a : guess.split("")) {
                 if (!usedLetters.contains(a))
                     usedLetters.add(a);
             }
+            this.displayGuesses();
             if (guess.equals(answer)) {
                 this.win();
             } else if (attempt == 6) {
                 this.lose();
             }
+        }
+        System.out.println("\n---------------------------");
+    }
+
+    public void displayGuesses() {
+        System.out.println();
+        for (int i = 0; i < attempt; i++) {
+            this.displayGuess(guessedWords[i]);
         }
     }
 
@@ -57,7 +66,7 @@ public class Wordle {
             else
                 System.out.print(guess.substring(i, i + 1));
         }
-        System.out.println('\n');
+        System.out.println();
     }
 
     public boolean checkLength(String guess) {
@@ -72,12 +81,12 @@ public class Wordle {
     }
 
     public void win() {
-        System.out.println("You Won!\n");
+        System.out.println("\nYou guessed the word!");
         done = true;
     }
 
     public void lose() {
-        System.out.println("You lost!\n");
+        System.out.println("\nYou ran out of guesses!\nThe word was " + answer);
         done = true;
     }
 

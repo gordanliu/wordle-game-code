@@ -6,6 +6,7 @@ class Main {
         Wordle game = new Wordle("words");
 
         while (!game.done) {
+            System.out.println();
             System.out.print("Guess word: ");
             game.makeGuess(console.next());
         }
