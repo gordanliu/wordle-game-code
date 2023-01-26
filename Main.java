@@ -8,7 +8,7 @@ class Main {
         while (!game.done) {
             System.out.println();
             System.out.print("Guess word: ");
-            game.makeGuess(console.next());
+            game.makeGuess(console.nextLine());
         }
 
     }
