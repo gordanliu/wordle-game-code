@@ -5,11 +5,10 @@ class Main {
         Scanner console = new Scanner(System.in);
         Wordle game = new Wordle("words");
 
-        while (!game.done) {
+        while (game.attempt < 6) {
             System.out.println();
             System.out.print("Guess word: ");
             game.makeGuess(console.nextLine());
         }
-
     }
 }
